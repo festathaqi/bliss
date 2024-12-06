@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./logIn.css">
-    <link rel="stylesheet" href="../nav.css">
+
 </head>
 <body>
     <!-- NAV -->
@@ -14,15 +14,64 @@
         <a href="index.html" class="logo">Bliss</a>
         <ul class="nav">
             <li><a href="/index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="/aboutus.html">About</a></li>
+            <li><a href="/products.html">Products</a></li>
             <li><a href="login.html">Log In</a></li>
         </ul>
     </nav>
 
     <!-- LogIn-SignUp section -->
-        <div>
-
+       <div class="section">
+        <div class="mainBox">
+            <div class="logInPart">
+                Login 
+                <form action="#" method="post">
+                    <!-- Username Field -->
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required maxlength="30">
+                    <br>
+            
+                    <!-- Password Field -->
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required maxlength="30">
+                    <br>
+            
+                    <!-- Submit Button -->
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <div class="signUpPart">
+                <form action="#" method="post">
+                    <!-- Full Name Field -->
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required maxlength="50">
+                    <br>
+            
+                    <!-- Email Field -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+            
+                    <!-- Username Field -->
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required maxlength="30">
+                    <br>
+            
+                    <!-- Password Field -->
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                    <br>
+            
+                    <!-- Confirm Password Field -->
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required minlength="8">
+                    <br>
+            
+                    <!-- Submit Button -->
+                    <input type="submit" value="Sign Up">
+                </form>
+            </div>
         </div>
+       </div>
 </body>
 </html>
