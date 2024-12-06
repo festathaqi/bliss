@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Ogg';
+    src: url('fonts/Ogg-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Ogg', sans-serif;
+    line-height: 1.6;
+}
