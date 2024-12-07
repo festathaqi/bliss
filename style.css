@@ -110,6 +110,14 @@ body {
     margin-bottom: 15px;
 }
 
+.about-button {
+    color: #fffdfe;
+}
+
+.about-button:hover{
+    color: #e995bf;
+}
+
 .about p {
     font-size: 1rem;
     color: #fffdfe;
