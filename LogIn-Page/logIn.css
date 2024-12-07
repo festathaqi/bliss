@@ -65,6 +65,17 @@ body {
 }
 .mainBox{
     background-color: aliceblue;
-    width: 200px;
+    width: 500px;
     height: auto;
+
+}
+.logInPart{
+    background-color: pink;
+}
+.logInForm{
+    display: flex;
+    flex-direction: column;
+}
+.signUpPart{
+    background-color: darkkhaki;
 }
