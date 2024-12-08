@@ -1,60 +1,68 @@
-
-document.querySelector('#signUp').addEventListener('click', function (event) {
-    let fullname = document.getElementById('fullname').value.trim();
-    let email = document.getElementById('email').value.trim();
+// Login Form Validation
+document.querySelector('.logInForm').addEventListener('submit', function (event) {
     let username = document.getElementById('username').value.trim();
-    let password = document.getElementById('password').value;
-    let confirmPassword = document.getElementById('confirm_password').value;
-    let valid = true;
+    let password = document.getElementById('password').value.trim();
+    let errors = [];
 
-    if (fullname === "" || fullname.length < 2) {
-        alert("Fullname must be at least 2 characters long.");
-        valid = false;
+    // Validate username
+    if (username === "") {
+        errors.push("Username cannot be empty.");
     }
 
-
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email.");
-        valid = false;
+    // Validate password
+    if (password === "") {
+        errors.push("Password cannot be empty.");
     }
 
-    if (username.length < 3) {
-        alert("Username must be at least 3 characters long.");
-        valid = false;
-    }
-
-    if (password.length < 8) {
-        alert("Password must be at least 8 characters long.");
-        valid = false;
-    }
-
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        valid = false;
-    }
-
-    if (!valid) {
-        event.preventDefault();
+    // Show errors if any
+    if (errors.length > 0) {
+        event.preventDefault(); // Stop form submission
+        alert(errors.join("\n"));
+    } else {
+        alert("Login successful!"); // Optional feedback for successful validation
     }
 });
 
-document.querySelector('#logIn').addEventListener('click', function (event) {
+// Register Form Validation
+document.querySelector('form[action="#"]').addEventListener('submit', function (event) {
+    let fullname = document.getElementById('fullname').value.trim();
+    let email = document.getElementById('email').value.trim();
     let username = document.getElementById('username').value.trim();
-    let password = document.getElementById('password').value;
-    let valid = true;
+    let password = document.getElementById('password').value.trim();
+    let confirmPassword = document.getElementById('confirm_password').value.trim();
+    let errors = [];
 
-    if (username === "") {
-        alert("Username cannot be empty.");
-        valid = false;
+    // Validate fullname
+    if (fullname === "" || fullname.length < 2) {
+        errors.push("Fullname must be at least 2 characters.");
     }
 
-    if (password === "") {
-        alert("Password cannot be empty.");
-        valid = false;
+    // Validate email using regex
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errors.push("Invalid email format.");
     }
 
-    if (!valid) {
-        event.preventDefault();
+    // Validate username
+    if (username.length < 3) {
+        errors.push("Username must be at least 3 characters.");
+    }
+
+    // Validate password
+    if (password.length < 8) {
+        errors.push("Password must be at least 8 characters.");
+    }
+
+    // Confirm password validation
+    if (password !== confirmPassword) {
+        errors.push("Passwords do not match.");
+    }
+
+    // Show errors if any
+    if (errors.length > 0) {
+        event.preventDefault(); // Stop form submission
+        alert(errors.join("\n"));
+    } else {
+        alert("Registration successful!"); // Optional feedback for successful validation
     }
 });
