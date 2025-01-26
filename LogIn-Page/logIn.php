@@ -11,10 +11,11 @@
     <div class="section">
         <div class="mainBox">
             <?php
+            require_once "../database.php";
+
             if (isset($_POST["logIn"])) {
                 $email = $_POST["email"];
                 $password = $_POST["password"];
-                require_once "database.php";
                 $sql = "SELECT * FROM users WHERE email ='$email'";
                 $result = mysqli_query($conn, $sql);
                 $user = mysqli_fetch_array($result, MYSQLI_ASSOC);

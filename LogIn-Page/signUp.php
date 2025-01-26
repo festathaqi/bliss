@@ -10,6 +10,8 @@
 <body>
     <div class="signUpPart">
         <?php
+        require_once "./database.php";
+
         if (isset($_POST["submit"] )) {
             $fullName = $_POST["fullname"];
             $email = $_POST["email"];
@@ -33,7 +35,7 @@
             if ($password!==$confirm_password) {
                 array_push($errors, "Password does not match");
             }
-            require_once "../database.php";
+
             $sql = "SELECT * FROM users WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
             $rowCount = mysqli_num_rows($result);
