@@ -12,9 +12,9 @@
         <a href="index.html" class="logo">Bliss</a>
         <ul class="nav">
             <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html" class="active">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="./LogIn-Page/logIn.html">Log In</a></li>
+            <li><a href="aboutus.php" class="active">About Us</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
         </ul>
     </nav>
     <div class="contact-section">

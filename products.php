@@ -13,16 +13,16 @@
         <a href="index.html" class="logo">Bliss</a>
         <ul class="nav">
             <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="aboutus.php">About Us</a></li>
             <li><a href="products.php" class="active">Products</a></li>
-            <li><a href="./LogIn-Page/logIn.html">Log In</a></li>
+            <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
         </ul>
     </nav>
 
     <div class="product-section">
         <h1>Our Products</h1>
         <div class="product-container">
-            <!-- Product 1 -->
+      
             <div class="product-card">
                 <img src="images/summerfriday.jpg" alt="Product 1">
                 <h2>Summer Fridays Lip Balm for Shine</h2>
@@ -34,7 +34,6 @@
                 </form>
             </div>
 
-            <!-- Product 2 -->
             <div class="product-card">
                 <img src="images/2way_.jpg" alt="Product 2">
                 <h2>Kiko Milano 3D Hydra Lipgloss</h2>
@@ -45,8 +44,6 @@
                     <button type="submit">Buy Now</button>
                 </form>
             </div>
-
-            <!-- Product 3 -->
             <div class="product-card">
                 <img src="images/glitter.jpg" alt="Product 3">
                 <h2>Kiko Unlimited Double Touch</h2>
@@ -58,7 +55,6 @@
                 </form>
             </div>
 
-            <!-- Product 4 -->
             <div class="product-card">
                 <img src="images/oil_.jpg" alt="Product 4">
                 <h2>NYX Fat Oil Lip</h2>
@@ -72,7 +68,7 @@
         </div>
 
         <div class="product-container">
-            <!-- Product 5 -->
+            
             <div class="product-card">
                 <img src="images/1.jpg" alt="Product 5">
                 <h2>Maybelline Sky High Glitter Mascara</h2>
@@ -84,7 +80,6 @@
                 </form>
             </div>
 
-            <!-- Product 6 -->
             <div class="product-card">
                 <img src="images/blue.jpg" alt="Product 6">
                 <h2>Maybelline Lash Sensational Mascara</h2>
@@ -96,7 +91,6 @@
                 </form>
             </div>
 
-            <!-- Product 7 -->
             <div class="product-card">
                 <img src="images/benefit.jpg" alt="Product 7">
                 <h2>Benefit BADgal BANG Mascara</h2>
@@ -108,7 +102,6 @@
                 </form>
             </div>
 
-            <!-- Product 8 -->
             <div class="product-card">
                 <img src="images/teles.png" alt="Product 8">
                 <h2>L'Oréal Paris Mascara Telescopic</h2>
