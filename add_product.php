@@ -1,27 +1,22 @@
 <?php
-// Lidhja me bazën e të dhënave
 $conn = new mysqli("localhost", "root", "", "bliss");
 
-// Kontrollo lidhjen
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Përpunimi i formularit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $price = $_POST['price'];
     $description = $_POST['description'];
     $imagePath = "";
 
-    // Ngarko imazhin
     if (!empty($_FILES['image']['name'])) {
         $targetDir = "uploads/";
         $imagePath = $targetDir . basename($_FILES['image']['name']);
         move_uploaded_file($_FILES['image']['tmp_name'], $imagePath);
     }
 
-    // Fut të dhënat në bazë
     $sql = "INSERT INTO products (name, price, description, image_path, created_at) 
             VALUES ('$name', '$price', '$description', '$imagePath', NOW())";
 

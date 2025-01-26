@@ -1,11 +1,9 @@
 <?php
-// Kontrollo nëse ka ardhur një formular POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Merr të dhënat e produktit nga formulari
     $product_title = $_POST['product_title'];
     $product_price = $_POST['product_price'];
 } else {
-    // Nëse nuk është bërë kërkesa POST, ridrejto te faqja e produkteve
+   
     header('Location: products.php');
     exit;
 }
@@ -27,17 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #7f2549; /* Ngjyra e background-it */
+            background-color: #7f2549; 
         }
 
         .checkout-section {
-            background-color: #f0c7d3; /* Ngjyra e brendshme e seksionit */
+            background-color: #f0c7d3; 
             width: 300px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            color: #7f2549; /* Ngjyra e tekstit */
         }
 
         .checkout-section h1 {
