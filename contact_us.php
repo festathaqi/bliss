@@ -1,16 +1,6 @@
 <?php
-// Lidhja me bazën e të dhënave
-$servername = "localhost";
-$username = "root"; // Ndrysho sipas konfigurimit të serverit
-$password = "";
-$dbname = "bliss";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Kontrollo lidhjen
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'database.php';
 
 // Tërhiq mesazhet nga tabela
 $sql = "SELECT id, name, email, message FROM contact_us ORDER BY id DESC";

@@ -1,5 +1,6 @@
 <?php
-require_once 'data.php';
+
+require_once 'database.php';
 
 $sql = "SELECT full_name, email, role FROM users";
 $result = mysqli_query($conn, $sql);
