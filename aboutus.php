@@ -41,19 +41,19 @@
                 <img src="images/makeuptut.jpg" alt="Our Mission">
                 <h2>Our Mission</h2>
                 <p>Bliss is where beauty meets confidence.
-                    We believe that makeup is more than just a routine; it's an art of self-expression. We know that beauty comes in many shades and preferences, so we make it a priority to offer products that work for everyone. We sell affordable, high-quality makeup to boost your confidence and highlight your unique beauty. Thank you for choosing Bliss to be a part of your story. </p>
+                    We believe that makeup is more than just a routine, it is an art of self-expression. We know that beauty comes in many shades and preferences, so we make it a priority to offer products that work for everyone. We sell affordable, high-quality makeup to boost your confidence and highlight your unique beauty. Thank you for choosing Bliss to be a part of your story. </p>
             </div>
             <div class="about-card">
                 <img src="images/girlsss1.jpg" alt="Our Vision">
                 <h2>Our Best for You</h2>
-                <p>Now that you’re here, take a look around, discover your new favorites and let us help you look and feel your best every day. From the latest trends to timeless classics, you’re just a few clicks away from discovering what makes you shine.
+                <p>Now that you're here, take a look around, discover your new favorites and let us help you look and feel your best every day. From the latest trends to timeless classics, you’re just a few clicks away from discovering what makes you shine.
                     <img src="images/products.jpg" alt="Our Vision">
                 </p>
             </div>
             <div class="about-card">
                 <img src="images/makeuptut.jpg" alt="Our Clients">
                 <h2>Our Clients</h2>
-                <p>We focus on being honest and reliable, making sure every client feels satisfied and valued. We take pride in delivering great service and building strong connections.  </p>
+                <p>We focus on being honest, making sure every client feels satisfied and special. We take pride in delivering great service and building strong connections.  </p>
             </div>
         </div>
 
