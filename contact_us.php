@@ -2,7 +2,6 @@
 
 require_once 'database.php';
 
-// Tërhiq mesazhet nga tabela
 $sql = "SELECT id, name, email, message FROM contact_us ORDER BY id DESC";
 $result = $conn->query($sql);
 

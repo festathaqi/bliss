@@ -53,7 +53,7 @@
         }
 
         input[type="number"] {
-            -moz-appearance: textfield; /* Remove spinner buttons in Firefox */
+            -moz-appearance: textfield; 
         }
 
         button {

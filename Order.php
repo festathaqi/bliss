@@ -9,7 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0c7d3; /* New background color */
+            background-color: #f0c7d3; 
             height: 100vh;
             margin: 0;
         }
@@ -25,7 +25,7 @@
             text-align: center;
         }
         .signUpPart h1, .signUpPart p {
-            color: #600f3e; /* Text color */
+            color: #600f3e; 
             font-weight: bold;
         }
         .signUpPart p {
@@ -33,7 +33,7 @@
         }
         a {
             text-decoration: none;
-            background-color: #600f3e; /* Button color */
+            background-color: #600f3e; 
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
