@@ -29,7 +29,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
     
-            <button type="submit">Send Message</button>
+            
         </form>
     </div>
     <div class="about-section">
