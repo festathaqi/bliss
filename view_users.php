@@ -17,7 +17,7 @@ $result = mysqli_query($conn, $sql);
 </head>
 <body>
     <div class="container">
-        <h1>User Management</h1>
+        <h1>Users</h1>
         <table>
             <thead>
                 <tr>
