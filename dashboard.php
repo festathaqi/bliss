@@ -151,9 +151,7 @@
                 <ul>
                     <li><a href="view_users.php">View Users</a></li>
                     <li><a href="add_product.php">Add Product</a></li>
-                    <li><a href="products.php">Products</a></li>
-                    <li><a href="purchases.php">Purchases</a></li>
-                    <li><a href="contact_us.php">View Contact Us</a></li>
+                    
                 </ul>
             </aside>
 
