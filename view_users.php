@@ -2,7 +2,7 @@
 
 require_once 'database.php';
 
-$sql = "SELECT full_name, email, role FROM users";
+$sql = "SELECT id, full_name, email, role FROM users";
 $result = mysqli_query($conn, $sql);
 
 ?>
@@ -24,6 +24,7 @@ $result = mysqli_query($conn, $sql);
                     <th>Full Name</th>
                     <th>Email</th>
                     <th>Role</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,10 @@ $result = mysqli_query($conn, $sql);
                         <td><?php echo htmlspecialchars($user['full_name']); ?></td>
                         <td><?php echo htmlspecialchars($user['email']); ?></td>
                         <td><?php echo htmlspecialchars($user['role']); ?></td>
+                        <td>
+                            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="edit-btn">Edit</a>
+                            <a href="delete_user.php?id=<?php echo $user['id']; ?>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
