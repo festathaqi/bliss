@@ -41,6 +41,9 @@ $result = mysqli_query($conn, $sql);
                 <?php endwhile; ?>
             </tbody>
         </table>
+        <div style="margin-top: 20px;">
+            <a href="dashboard.php">Back to Dashboard</a>
+        </div>
     </div>
 </body>
 </html>

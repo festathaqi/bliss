@@ -2,37 +2,32 @@
 require_once 'database.php';
 session_start();
 
-// Check if user ID is provided
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("User ID is missing.");
 }
 
 $id = $_GET['id'];
 
-// Fetch user data
-$sql = "SELECT full_name, email, role FROM users WHERE id = ?";
-$stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "i", $id);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
+$sql = "SELECT id, full_name, email, role FROM users WHERE id = $id";
+$result = mysqli_query($conn, $sql);
 $user = mysqli_fetch_assoc($result);
+
 
 if (!$user) {
     die("User not found.");
 }
 
-// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
     $role = $_POST['role'];
 
-    $update_sql = "UPDATE users SET full_name = ?, email = ?, role = ? WHERE id = ?";
-    $update_stmt = mysqli_prepare($conn, $update_sql);
-    mysqli_stmt_bind_param($update_stmt, "sssi", $full_name, $email, $role, $id);
+    $update_sql = "UPDATE users SET full_name = '$full_name', email = '$email', role = '$role' WHERE id = $id";
 
-    if (mysqli_stmt_execute($update_stmt)) {
-        header("Location: view_users.php?message=User updated successfully");
+
+    // Execute the query
+    if (mysqli_query($conn, $update_sql)) {
+        header("Location: view_users.php");
         exit();
     } else {
         echo "Error updating user: " . mysqli_error($conn);
