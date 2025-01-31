@@ -32,7 +32,7 @@
                         if($user['role'] == 'admin'){
                             header("Location: ../dashboard.php");
                         }else{
-                            header("Location: ../index.html");
+                            header("Location: ../index.php");
                         }
                     } else {
                         echo "<div class='alert alert-danger'>Password does not match</div>";

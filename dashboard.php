@@ -2,7 +2,7 @@
 session_start();
 
 if(!$_SESSION['user_id']){
-    header("Location: ./index.html");
+    header("Location: ./index.php");
 }
 
 ?>
@@ -152,7 +152,7 @@ if(!$_SESSION['user_id']){
 <body>
     <div class="dashboard">
         <header class="dashboard-header">
-            <h1><a href="index.html">Bliss</a></h1>
+            <h1><a href="index.php">Bliss</a></h1>
             <?php 
             
             $user_name = $_SESSION["full_name"];

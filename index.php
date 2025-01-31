@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./logIn.css">
     
-
 </head>
 
 <body>
     <nav class="main-nav">
-        <a href="index.html" class="logo">Bliss</a>
+        <a href="index.php" class="logo">Bliss</a>
         <ul class="nav">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.php" class="active">Home</a></li>
             <li><a href="aboutus.php">About Us</a></li>
             <li><a href="products.php">Products</a></li>
-            <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
+            <?php 
+            
+            session_start();
+
+            if(!isset($_SESSION['user_id'])){ ?>
+                <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
+            <?php }else { ?>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="logout.php">Log Out</a></li>
+            <?php } ?>
         </ul>
     </nav>
 
@@ -41,7 +49,7 @@
                 <p>€15.00</p>
             </article>
             
-            <article class="product">
+            <article class="product">  
                 <img src="images/1.jpg" alt="Product 3">
                 <h4>Maybelline Sky High Glitter Mascara</h4>
                 <p>€15.50</p>

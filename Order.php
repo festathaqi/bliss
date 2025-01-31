@@ -48,7 +48,7 @@
 <body>
     <div class="signUpPart">
         <h1>Thank you for your order. We’re processing it now.</h1>
-        <a href="index.html">Go Back to Home</a>
+        <a href="index.php">Go Back to Home</a>
     </div>
 </body>
 </html>
