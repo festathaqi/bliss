@@ -49,7 +49,7 @@
             }else{
             
 
-                $sql = "INSERT INTO users (full_name, email, password, role) VALUES ('$fullName', '$email', '$passwordHash', '$role')";
+                $sql = "INSERT INTO users (full_name, email, password, role) VALUES ('$fullName', '$email', '$passwordHash', 'user')";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "<div class='alert alert-success'>You are registered successfully.</div>";
@@ -73,11 +73,6 @@
             <input type="password" placeholder="Enter password" id="password" name="password" minlength="8">
 
             <input type="password" placeholder="Confirm password" id="confirm_password" name="confirm_password" minlength="8">
-
-            <select id="role" name="role">
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-            </select>
 
             <input type="submit" value="Sign Up" id="signUp" name="submit">
         </form>

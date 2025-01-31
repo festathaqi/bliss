@@ -22,6 +22,13 @@
 
                 if ($user) {
                     if (password_verify($password, $user["password"])) {
+                        session_start();
+
+                        $_SESSION["user_id"] = $user["id"];
+                        $_SESSION["full_name"] = $user["full_name"];
+                        $_SESSION["user_email"] = $user["email"];
+                        $_SESSION["user_role"] = $user["role"];
+
                         if($user['role'] == 'admin'){
                             header("Location: ../dashboard.php");
                         }else{

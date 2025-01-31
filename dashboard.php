@@ -1,6 +1,16 @@
+<?php 
+session_start();
+
+if(!$_SESSION['user_id']){
+    header("Location: ./index.html");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -143,7 +153,12 @@
     <div class="dashboard">
         <header class="dashboard-header">
             <h1><a href="index.html">Bliss</a></h1>
-            <span>Admin Dashboard <a href="logout.php">Logout</a></span>
+            <?php 
+            
+            $user_name = $_SESSION["full_name"];
+            
+            ?>
+            <span>Welcome, <?php echo ucfirst($user_name); ?> <a href="logout.php">Logout</a></span>
         </header>
 
         <div class="dashboard-container">
@@ -162,7 +177,7 @@
                 <div class="stats"> <p><a href="view_users.php" style=>Total Users</a></p>
                     <p>Total Products</p>
                  
-                </div>
+                </div> 
 
                 <div class="recent-activity">
                     <h3>Recent Comments</h3>
