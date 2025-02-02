@@ -241,3 +241,51 @@ footer {
 .product-card button:hover {
     background-color: #9c7582;
 }
+
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fffdfe;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #7f2549;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .nav.show {
+        display: flex;
+    }
+
+    .nav a {
+        color: #fffdfe;
+        text-align: center;
+    }
+}

@@ -11,6 +11,28 @@
 </head>
 
 <body>
+<nav class="main-nav">
+    <a href="index.php" class="logo">Bliss</a>
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav" id="nav-menu">
+        <li><a href="index.php" class="active">Home</a></li>
+        <li><a href="aboutus.php">About Us</a></li>
+        <li><a href="products.php">Products</a></li>
+        <?php 
+        session_start();
+        if(!isset($_SESSION['user_id'])){ ?>
+            <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
+        <?php }else { ?>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="logout.php">Log Out</a></li>
+        <?php } ?>
+    </ul>
+</nav>
+<!-- 
     <nav class="main-nav">
         <a href="index.php" class="logo">Bliss</a>
         <ul class="nav">
@@ -28,7 +50,7 @@
                 <li><a href="logout.php">Log Out</a></li>
             <?php } ?>
         </ul>
-    </nav>
+    </nav> -->
 
     <section class="intro">
         <h1><a href="products.php" class="shop-now">SHOP NOW</a></h1>
@@ -67,3 +89,4 @@
     </footer>
 </body>
 </html>
+<script src="responsive.js"></script>
