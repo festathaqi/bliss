@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Ogg';
     src: url('fonts/Ogg-Regular.otf') format('opentype');
@@ -11,7 +10,6 @@ body {
     font-family: 'Ogg', sans-serif;
     line-height: 1.6;
 }
-
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -24,7 +22,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #fffdfe;
-    text-decoration: none;
+        text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -57,6 +55,7 @@ body {
     background-color: #7f2549;
     color: #fff;
 }
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -177,7 +176,6 @@ footer {
     background-color: #333;
     color: #fff;
 }
-
 .product-section {
     text-align: center;
     padding: 20px;
@@ -210,7 +208,7 @@ footer {
 .product-card:hover {
     transform: translateY(-5px);
 }
-
+ 
 .product-card img {
     width: 100%;
     height: auto;
@@ -242,19 +240,91 @@ footer {
 
 .product-card button:hover {
     background-color: #9c7582;
+} 
+
+.bestsellers {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.bestsellers h2 {
+    font-size: 2.5rem;
+    color: #7f2549;
+    margin-bottom: 20px;
+}
+
+/* Slider Styling */
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden; /* Hide overflow when scrolling */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.product {
+    flex: 0 0 33.33%; /* Each product takes up 1/3 of the container */
+    box-sizing: border-box;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #7f2549;
 }
 
 .buy-now-btn {
-    background-color: #FF6F61; 
+    background-color: #7f2549;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s ease;
 }
 
 .buy-now-btn:hover {
-    background-color: #e85a4f;
+    background-color: #f2b2c9;
 }
+
+/* Positioning and styling of the buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(127, 37, 73, 0.8);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+    display: block; /* Ensure it is visible by default */
+    z-index: 1;
+}
+
+.prev:hover, .next:hover {
+    background-color: #f2b2c9;
+}
+
+.prev { left: 5px; }
+.next { right: 5px; }

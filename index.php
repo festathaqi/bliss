@@ -35,51 +35,43 @@
         <p>Bliss is the joy and confidence you feel when you look your best. It's that inner glow of beauty.</p>
         <p> Be shining, Be glowing, Be you.</p>
     </section>    
-    <section class="products">
+
+    <section class="bestsellers">
     <h2>Bestsellers</h2>
-    <div class="product-list">
-        <article class="product">
-            <img src="images/summerfriday.jpg" alt="Product 1">
-            <h4>Summer Fridays Lip Balm for Shine</h4>
-            <p>€24.00</p>
-            <form method="POST" action="checkout.php">
-                <input type="hidden" name="product_title" value="Summer Fridays Lip Balm for Shine">
-                <input type="hidden" name="product_price" value="24.00">
-                <button type="submit" class="buy-now-btn">Buy Now</button>
-            </form>
-        </article>
-        <article class="product">
-            <img src="images/nyxblush.jpg" alt="Product 2">
-            <h4>Buttermelt Blush From Nyx Professional Makeup</h4>
-            <p>€15.00</p>
-            <form method="POST" action="checkout.php">
-                <input type="hidden" name="product_title" value="Buttermelt Blush From Nyx Professional Makeup">
-                <input type="hidden" name="product_price" value="15.00">
-                <button type="submit" class="buy-now-btn">Buy Now</button>
-            </form>
-        </article>
-        <article class="product">
-            <img src="images/toofaced.jpg" alt="Product 3">
-            <h4>Too Faced Born This Way Liquid Foundation</h4>
-            <p>€32.00</p>
-            <form method="POST" action="checkout.php">
-                <input type="hidden" name="product_title" value="Too Faced Born This Way Liquid Foundation">
-                <input type="hidden" name="product_price" value="32.00">
-                <button type="submit" class="buy-now-btn">Buy Now</button>
-            </form>
-        </article>
-        <article class="product">
-            <img src="images/1.jpg" alt="Product 4">
-            <h4>Maybelline Sky High Glitter Mascara</h4>
-            <p>€15.50</p>
-            <form method="POST" action="checkout.php">
-                <input type="hidden" name="product_title" value="Maybelline Sky High Glitter Mascara">
-                <input type="hidden" name="product_price" value="15.50">
-                <button type="submit" class="buy-now-btn">Buy Now</button>
-            </form>
-        </article>
+    <div class="slider-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slider">
+            <!-- Product items here -->
+            <div class="product">
+                <img src="images/summerfriday.jpg" alt="Product 1">
+                <h4>Summer Fridays Lip Balm</h4>
+                <p class="price">€24.00</p>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="images/nyxblush.jpg" alt="Product 2">
+                <h4>Buttermelt Blush</h4>
+                <p class="price">€15.00</p>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="images/toofaced.jpg" alt="Product 3">
+                <h4>Too Faced Foundation</h4>
+                <p class="price">€32.00</p>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+            <div class="product">
+                <img src="images/1.jpg" alt="Product 4">
+                <h4>Maybelline Mascara</h4>
+                <p class="price">€15.50</p>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 </section>
+
+
 
  
     <section id="about-us" class="about">
@@ -91,4 +83,76 @@
         <p>&copy; 2024 Bliss. All rights reserved.</p>
     </footer>
 </body>
+
+<script>
+  let currentIndex = 0;
+const slideIntervalTime = 3000; 
+let interval; 
+function moveSlide(step) {
+    const slider = document.querySelector('.slider');
+    const products = document.querySelectorAll('.product');
+    const totalSlides = products.length;
+    const visibleSlides = 3; 
+
+    currentIndex += step;
+
+    
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - visibleSlides; 
+    } else if (currentIndex > totalSlides - visibleSlides) {
+        currentIndex = 0; 
+    }
+
+    slider.style.transform = `translateX(${-currentIndex * 33.33}%)`;
+
+    toggleButtonsVisibility();
+}
+
+function toggleButtonsVisibility() {
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const products = document.querySelectorAll('.product');
+    const totalSlides = products.length;
+    const visibleSlides = 3;
+
+    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+
+    nextButton.style.display = currentIndex >= totalSlides - visibleSlides ? 'none' : 'block';
+}
+
+function startAutoSlide() {
+    interval = setInterval(() => {
+        moveSlide(1); 
+    }, slideIntervalTime);
+}
+
+function stopAutoSlide() {
+    clearInterval(interval); 
+}
+
+function handleBuyNowClick(event) {
+    window.location.href = 'checkout.php'; 
+}
+
+document.querySelectorAll('.product').forEach((product) => {
+    const buyButton = product.querySelector('button'); 
+
+   
+    product.addEventListener('mouseenter', stopAutoSlide);
+    buyButton.addEventListener('mouseenter', stopAutoSlide);
+
+   
+    product.addEventListener('mouseleave', startAutoSlide);
+    buyButton.addEventListener('mouseleave', startAutoSlide);
+
+    buyButton.addEventListener('click', handleBuyNowClick);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    toggleButtonsVisibility(); 
+    startAutoSlide(); 
+});
+
+
+</script>
 </html>
