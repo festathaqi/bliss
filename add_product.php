@@ -1,41 +1,26 @@
 <?php
-// Database connection
-$servername = "localhost"; // change to your DB server
-$username = "root"; // change to your DB username
-$password = ""; // change to your DB password
-$dbname = "bliss"; // your database name
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $price = $_POST["price"];
     $description = $_POST["description"];
     
-    // Handling the image upload
     $image_path = $_FILES["image_path"]["name"];
-    $target_dir = "images/"; // Folder where the image will be stored
+    $target_dir = "images/"; 
     $target_file = $target_dir . basename($image_path);
     
-    // Check if the file is a valid image
     $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     $allowed_types = array('jpg', 'jpeg', 'png', 'gif');
     
     if (in_array($image_file_type, $allowed_types)) {
         if (move_uploaded_file($_FILES["image_path"]["tmp_name"], $target_file)) {
-            // Insert product details into the database
+       
             $sql = "INSERT INTO products (name, price, description, image_path)
                     VALUES ('$name', '$price', '$description', '$image_path')";
             
-            if ($conn->query($sql) === TRUE) {
-                echo "New product added successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+            $conn->query($sql);
         } else {
             echo "Sorry, there was an error uploading your file.";
         }

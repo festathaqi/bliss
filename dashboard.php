@@ -11,7 +11,6 @@ if($_SESSION['user_role'] != 'admin'){
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -189,6 +188,7 @@ if($_SESSION['user_role'] != 'admin'){
                         <li>No comments yet.</li>
                     </ul>
                 </div>
+                
             </main>
         </div>
     </div>
