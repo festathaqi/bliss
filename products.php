@@ -1,3 +1,22 @@
+<?php
+// Database connection
+$servername = "localhost"; // change to your DB server
+$username = "root"; // change to your DB username
+$password = ""; // change to your DB password
+$dbname = "bliss"; // your database name
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

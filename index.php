@@ -36,26 +36,51 @@
         <p> Be shining, Be glowing, Be you.</p>
     </section>    
     <section class="products">
-        <h2>Bestsellers;</h2>
-        <div class="product-list">
-            <article class="product">
-                <img src="images/summerfriday.jpg" alt="Product 1">
-                <h4>Summer Fridays Lip Balm for Shine</h4>
-                <p>€24.00</p>
-            </article>
-            <article class="product">
-                <img src="images/nyxblush.jpg" alt="Product 2">
-                <h4>Buttermelt Blush From Nyx Professional Makeup </h4>
-                <p>€15.00</p>
-            </article>
-            
-            <article class="product">  
-                <img src="images/1.jpg" alt="Product 3">
-                <h4>Maybelline Sky High Glitter Mascara</h4>
-                <p>€15.50</p>
-            </article>
-        </div>
-    </section>
+    <h2>Bestsellers</h2>
+    <div class="product-list">
+        <article class="product">
+            <img src="images/summerfriday.jpg" alt="Product 1">
+            <h4>Summer Fridays Lip Balm for Shine</h4>
+            <p>€24.00</p>
+            <form method="POST" action="checkout.php">
+                <input type="hidden" name="product_title" value="Summer Fridays Lip Balm for Shine">
+                <input type="hidden" name="product_price" value="24.00">
+                <button type="submit" class="buy-now-btn">Buy Now</button>
+            </form>
+        </article>
+        <article class="product">
+            <img src="images/nyxblush.jpg" alt="Product 2">
+            <h4>Buttermelt Blush From Nyx Professional Makeup</h4>
+            <p>€15.00</p>
+            <form method="POST" action="checkout.php">
+                <input type="hidden" name="product_title" value="Buttermelt Blush From Nyx Professional Makeup">
+                <input type="hidden" name="product_price" value="15.00">
+                <button type="submit" class="buy-now-btn">Buy Now</button>
+            </form>
+        </article>
+        <article class="product">
+            <img src="images/toofaced.jpg" alt="Product 3">
+            <h4>Too Faced Born This Way Liquid Foundation</h4>
+            <p>€32.00</p>
+            <form method="POST" action="checkout.php">
+                <input type="hidden" name="product_title" value="Too Faced Born This Way Liquid Foundation">
+                <input type="hidden" name="product_price" value="32.00">
+                <button type="submit" class="buy-now-btn">Buy Now</button>
+            </form>
+        </article>
+        <article class="product">
+            <img src="images/1.jpg" alt="Product 4">
+            <h4>Maybelline Sky High Glitter Mascara</h4>
+            <p>€15.50</p>
+            <form method="POST" action="checkout.php">
+                <input type="hidden" name="product_title" value="Maybelline Sky High Glitter Mascara">
+                <input type="hidden" name="product_price" value="15.50">
+                <button type="submit" class="buy-now-btn">Buy Now</button>
+            </form>
+        </article>
+    </div>
+</section>
+
  
     <section id="about-us" class="about">
         <h2><a href="aboutus.html" class="about-button">About Us</a></h2>
