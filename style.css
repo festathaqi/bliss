@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Ogg';
     src: url('fonts/Ogg-Regular.otf') format('opentype');
@@ -10,6 +11,7 @@ body {
     font-family: 'Ogg', sans-serif;
     line-height: 1.6;
 }
+
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -22,7 +24,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #fffdfe;
-        text-decoration: none;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -55,7 +57,6 @@ body {
     background-color: #7f2549;
     color: #fff;
 }
-
 .intro {
     display: flex;
     flex-direction: column;
@@ -176,6 +177,7 @@ footer {
     background-color: #333;
     color: #fff;
 }
+
 .product-section {
     text-align: center;
     padding: 20px;
@@ -243,49 +245,4 @@ footer {
 }
 
 
-/* Hamburger Menu (Hidden by Default) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fffdfe;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-/* Responsive Menu */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: #7f2549;
-        padding: 20px;
-        border-radius: 8px;
-        z-index: 1000;
-    }
-
-    .nav.show {
-        display: flex;
-    }
-
-    .nav a {
-        color: #fffdfe;
-        text-align: center;
-    }
-}
