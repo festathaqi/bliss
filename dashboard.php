@@ -189,6 +189,7 @@ if($_SESSION['user_role'] != 'admin'){
                         <li>No comments yet.</li>
                     </ul>
                 </div>
+                
             </main>
         </div>
     </div>

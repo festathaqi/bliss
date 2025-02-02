@@ -1,3 +1,23 @@
+<?php
+
+require_once 'database.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $product_title = $_POST["product_title"];
+    $product_price = $_POST["product_price"];
+    $customer_first_name = $_POST["customer_first_name"];
+    $customer_last_name = $_POST["customer_last_name"];
+    $customer_address = $_POST["customer_address"];
+    
+    
+    $sql = "INSERT INTO purchases (product_title, product_price, customer_first_name, customer_last_name, customer_address)
+                    VALUES ('$product_title', '$product_price', '$customer_first_name', '$customer_last_name', '$customer_address')";
+    $conn->query($sql);
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -3,7 +3,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $product_title = $_POST['product_title'];
     $product_price = $_POST['product_price'];
 } else {
-   
     header('Location: products.php');
     exit;
 }
