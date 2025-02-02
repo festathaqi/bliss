@@ -23,11 +23,6 @@ $conn->close();
 <body>
 <nav class="main-nav">
     <a href="index.php" class="logo">Bliss</a>
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
     <ul class="nav" id="nav-menu">
         <li><a href="index.php" class="active">Home</a></li>
         <li><a href="aboutus.php">About Us</a></li>
