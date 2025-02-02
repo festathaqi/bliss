@@ -10,11 +10,20 @@
 <body>
     <nav class="main-nav">
         <a href="index.php" class="logo">Bliss</a>
-        <ul class="nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="aboutus.php" class="active">About Us</a></li>
+        <ul class="nav" id="nav-menu">
+            <li><a href="index.php" class="active">Home</a></li>
+            <li><a href="aboutus.php">About Us</a></li>
             <li><a href="products.php">Products</a></li>
-            <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
+            <?php 
+                session_start();
+                if(!isset($_SESSION['user_id'])){ ?>
+                    <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
+            <?php } else { 
+                if ($_SESSION['user_role'] === 'admin') { ?>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                <?php } ?>
+                <li><a href="logout.php">Log Out</a></li>
+            <?php } ?>
         </ul>
     </nav>
     <div class="contact-section">

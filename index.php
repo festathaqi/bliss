@@ -28,11 +28,13 @@ $conn->close();
         <li><a href="aboutus.php">About Us</a></li>
         <li><a href="products.php">Products</a></li>
         <?php 
-        session_start();
-        if(!isset($_SESSION['user_id'])){ ?>
-            <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
-        <?php }else { ?>
-            <li><a href="dashboard.php">Dashboard</a></li>
+            session_start();
+            if(!isset($_SESSION['user_id'])){ ?>
+                <li><a href="./LogIn-Page/logIn.php">Log In</a></li>
+        <?php } else { 
+            if ($_SESSION['user_role'] === 'admin') { ?>
+                <li><a href="dashboard.php">Dashboard</a></li>
+            <?php } ?>
             <li><a href="logout.php">Log Out</a></li>
         <?php } ?>
     </ul>

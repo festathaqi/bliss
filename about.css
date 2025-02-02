@@ -10,6 +10,7 @@ body {
     font-family: 'Ogg', sans-serif;
     line-height: 1.6;
 }
+
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -22,7 +23,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #fffdfe;
-        text-decoration: none;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -160,12 +161,89 @@ body {
     background-color: #555;
 }
 
-
-
 footer {
     text-align: center;
     padding: 15px;
     background-color: #333;
     color: white;
     margin-top: 30px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+    .main-nav {
+        padding: 10px;
+    }
+    
+    .main-nav a.logo {
+        font-size: 1.8rem;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+    
+    .about-container {
+        gap: 15px;
+    }
+
+    .about-card {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .contact-section {
+        padding: 1.5rem;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav a.logo {
+        font-size: 1.5rem;
+    }
+
+    .about-section .intro-text {
+        font-size: 16px;
+    }
+
+    .about-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem;
+    }
 }
