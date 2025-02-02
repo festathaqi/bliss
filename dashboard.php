@@ -11,7 +11,6 @@ if($_SESSION['user_role'] != 'admin'){
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head> 
