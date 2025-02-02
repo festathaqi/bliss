@@ -1,3 +1,13 @@
+<?php
+
+require_once 'database.php';
+
+$sql = "SELECT * FROM products";
+$products = $conn->query($sql);
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,42 +47,23 @@
     </section>    
 
     <section class="bestsellers">
-    <h2>Bestsellers</h2>
-    <div class="slider-container">
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <div class="slider">
-            <!-- Product items here -->
-            <div class="product">
-                <img src="images/summerfriday.jpg" alt="Product 1">
-                <h4>Summer Fridays Lip Balm</h4>
-                <p class="price">€24.00</p>
-                <button class="buy-now-btn">Buy Now</button>
+        <h2>Products</h2>
+        <div class="slider-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slider">
+                <!-- Loop through the bestsellers -->
+                <?php foreach ($products as $product) { ?>
+                    <div class="product">
+                        <img src="images/<?php echo htmlspecialchars($product['image_path']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                        <h4><?php echo htmlspecialchars($product['name']); ?></h4>
+                        <p class="price">€<?php echo number_format($product['price'], 2); ?></p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                <?php } ?>
             </div>
-            <div class="product">
-                <img src="images/nyxblush.jpg" alt="Product 2">
-                <h4>Buttermelt Blush</h4>
-                <p class="price">€15.00</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="product">
-                <img src="images/toofaced.jpg" alt="Product 3">
-                <h4>Too Faced Foundation</h4>
-                <p class="price">€32.00</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="product">
-                <img src="images/1.jpg" alt="Product 4">
-                <h4>Maybelline Mascara</h4>
-                <p class="price">€15.50</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-</section>
-
-
-
+    </section>
  
     <section id="about-us" class="about">
         <h2><a href="aboutus.html" class="about-button">About Us</a></h2>
