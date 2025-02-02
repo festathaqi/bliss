@@ -37,10 +37,10 @@
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 20px;    
             display: inline-block;
-        }
-        a:hover {
+        }              
+        a:hover { 
             background-color: #7f2549;
         }
     </style>

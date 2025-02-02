@@ -5,6 +5,10 @@ if(!$_SESSION['user_id']){
     header("Location: ./index.php");
 }
 
+if($_SESSION['user_role'] != 'admin'){
+    header("Location: ./index.php");
+}
+
 ?>
 
 
